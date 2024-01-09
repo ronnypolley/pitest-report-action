@@ -1,2 +1,9 @@
-# pitest-report-action
+= pitest-report-action
 Report action for PITest reports produced by pitest-maven-plugin
+
+== Inputs
+
+== Outputs
+
+== Example usage
+
