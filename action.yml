@@ -1,0 +1,5 @@
+name: 🧬 PITest report
+description: Publish the mutation report to a Github workflow
+runs:
+  using: node20
+  main: dist/index.js
