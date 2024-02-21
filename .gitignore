@@ -1,3 +1,5 @@
 node_modules/
 # dist should only be written by a workflow
 dist/
+*~
+
