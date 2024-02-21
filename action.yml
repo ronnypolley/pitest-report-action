@@ -1,5 +1,38 @@
 name: 🧬 PITest report
 description: Publish the mutation report to a Github workflow
+author: Ronny Polley
+branding:
+  icon: upload
+  color: blue
 runs:
   using: node20
   main: dist/index.js
+
+inputs:
+  files:
+    description: PITest XML report (globs supported)
+    required: true
+    default: '**/pit-reports/mutations.xml'
+
+  summary:
+    description: Publish results to the workflow summary?
+    required: false
+    default: 'true'
+
+  
+
+outputs:
+  mutation_coverage:
+    description: Ratio of number of mutation killed to the all number of mutations (regardless of whether it was covered by tests or not).
+
+  test_strength:
+    description: Ratio of number of mutations killed by tests to number of all mutations covered by tests.
+
+  killed_mutations:
+    description: Amount of mutations killed by tests.
+
+  survived_mutations:
+    description: Amount of mutations survived testing.
+
+  no_coverage_mutations:
+    description: Amount of mutations survived because no test covers this code.
