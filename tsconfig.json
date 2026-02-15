@@ -2,7 +2,7 @@
     "$schema": "https://json.schemastore.org/tsconfig",
     "compilerOptions": {
       "target": "ES2022",
-      "rootDir": "./src",
+      "rootDir": "./",
       "baseUrl": "./",
       "sourceMap": true,
       "outDir": "./dist",
