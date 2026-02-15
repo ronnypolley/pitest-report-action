@@ -1,4 +1,4 @@
-import { X2jOptionsOptional, XMLParser } from "fast-xml-parser";
+import {X2jOptions, XMLParser} from "fast-xml-parser";
 
 export enum MutationStatus {
     KILLED, SURIVED, NO_COVERAGE
@@ -30,15 +30,15 @@ export class Report{
 }
 
 export function parseMutationReport(data: string): Report {
-    const arrays = [
+    const arrays = new Set([
         "mutations.mutation",
         "mutations.mutation.indexes",
         "mutations.mutation.blocks"
-    ]
-    const options: X2jOptionsOptional = {
+    ])
+    const options: X2jOptions = {
         ignoreAttributes: false,
         parseAttributeValue: true,
-        isArray: (tagName, jPath, isLeafNode) => arrays.indexOf(jPath) !== -1
+        isArray: (tagName, jPath) => arrays.has(jPath)
     }
 
     return new XMLParser(options).parse(data);
