@@ -4,8 +4,8 @@
   "description": "Report action for PITest reports produced by pitest-maven-plugin",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest",
-    "test-with-coverage": "jest --coverage",
+    "test": "jest --config jest.config.ts",
+    "test-with-coverage": "jest --coverage --config jest.config.ts",
     "build": "tsc"
   },
   "keywords": [
